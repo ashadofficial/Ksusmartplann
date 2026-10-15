@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | KSU SmartPlan</title>
+
+    <!-- Dashboard / Application CSS -->
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<div class="app-layout">
+
+
+    <!-- =====================================================
+         FIXED COLLAPSIBLE SIDEBAR
+    ====================================================== -->
+    <div id="sidebarContainer"></div>
+
+
+
+    <!-- =====================================================
+         MAIN APPLICATION AREA
+    ====================================================== -->
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+        <header class="topbar">
+
+            <div class="topbar-title">
+
+                <span class="page-label">
+                    ACCOUNT
+                </span>
+
+                <h1>Settings</h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <div class="semester-chip">
+                    <span class="semester-dot"></span>
+
+                    <span id="currentSemester">
+                        Current Semester
+                    </span>
+                </div>
+
+
+                <a
+                    href="profile.html"
+                    class="top-profile"
+                >
+
+                    <div class="top-profile-avatar" id="topAvatar">
+                        S
+                    </div>
+
+                    <div class="top-profile-info">
+
+                        <strong id="topUserName">
+                            Student
+                        </strong>
+
+                        <span id="topStudentId">
+                            Student ID
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+        ================================================== -->
+        <div class="dashboard-content settings-page">
+
+    <!-- SETTINGS HEADER -->
+    <section class="settings-hero">
+
+        <div>
+            <span class="hero-label">
+                KSU SMARTPLAN
+            </span>
+
+            <h2>Settings</h2>
+
+            <p>
+                Manage your account, academic preferences,
+                interface and saved SmartPlan data.
+            </p>
+        </div>
+
+        <div class="settings-account-badge">
+            <span>Signed in as</span>
+            <strong id="settingsUserName">Student</strong>
+            <small id="settingsStudentId">Student ID</small>
+        </div>
+
+    </section>
+
+
+    <!-- SETTINGS LAYOUT -->
+    <div class="settings-layout">
+
+        <!-- LEFT NAVIGATION -->
+        <aside class="settings-navigation">
+
+            <button
+                type="button"
+                class="settings-nav-button active"
+                data-settings-section="account"
+            >
+                <strong>Account & Security</strong>
+                <span>Login and password</span>
+            </button>
+
+            <button
+                type="button"
+                class="settings-nav-button"
+                data-settings-section="academic"
+            >
+                <strong>Academic Preferences</strong>
+                <span>Study defaults</span>
+            </button>
+
+            <button
+                type="button"
+                class="settings-nav-button"
+                data-settings-section="interface"
+            >
+                <strong>Interface</strong>
+                <span>SmartPlan behavior</span>
+            </button>
+
+            <button
+                type="button"
+                class="settings-nav-button"
+                data-settings-section="data"
+            >
+                <strong>Data & Storage</strong>
+                <span>Saved account data</span>
+            </button>
+
+        </aside>
+
+
+        <!-- SETTINGS CONTENT -->
+        <div class="settings-content">
+
+
+            <!-- ==========================================
+                 ACCOUNT & SECURITY
+            =========================================== -->
+            <section
+                class="settings-section active"
+                data-settings-panel="account"
+            >
+
+                <div class="settings-section-header">
+                    <span class="card-eyebrow">
+                        ACCOUNT
+                    </span>
+
+                    <h3>Account & Security</h3>
+
+                    <p>
+                        Review your account identity and update
+                        your sign-in password.
+                    </p>
+                </div>
+
+
+                <div class="settings-info-grid">
+
+                    <div class="settings-readonly-field">
+                        <span>Full Name</span>
+                        <strong id="settingsFullName">
+                            Student
+                        </strong>
+                    </div>
+
+                    <div class="settings-readonly-field">
+                        <span>Student ID</span>
+                        <strong id="settingsAccountStudentId">
+                            —
+                        </strong>
+                    </div>
+
+                    <div class="settings-readonly-field">
+                        <span>Department</span>
+                        <strong id="settingsDepartment">
+                            —
+                        </strong>
+                    </div>
+
+                    <div class="settings-readonly-field">
+                        <span>Academic Year</span>
+                        <strong id="settingsAcademicYear">
+                            —
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="settings-divider"></div>
+
+
+                <form
+                    id="changePasswordForm"
+                    class="settings-form"
+                >
+
+                    <div class="settings-subheading">
+                        <h4>Change Password</h4>
+                        <p>
+                            Enter your current password before
+                            choosing a new one.
+                        </p>
+                    </div>
+
+
+                    <div class="settings-form-grid">
+
+                        <div class="settings-field">
+                            <label for="currentPassword">
+                                Current Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="currentPassword"
+                                autocomplete="current-password"
+                            >
+                        </div>
+
+                        <div class="settings-field">
+                            <label for="newPassword">
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="newPassword"
+                                autocomplete="new-password"
+                            >
+                        </div>
+
+                        <div class="settings-field">
+                            <label for="confirmNewPassword">
+                                Confirm New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmNewPassword"
+                                autocomplete="new-password"
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-form-footer">
+
+                        <span
+                            id="passwordMessage"
+                            class="settings-message"
+                        ></span>
+
+                        <button
+                            type="submit"
+                            class="settings-primary-button"
+                        >
+                            Update Password
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- ==========================================
+                 ACADEMIC PREFERENCES
+            =========================================== -->
+            <section
+                class="settings-section"
+                data-settings-panel="academic"
+                hidden
+            >
+
+                <div class="settings-section-header">
+                    <span class="card-eyebrow">
+                        ACADEMIC
+                    </span>
+
+                    <h3>Academic Preferences</h3>
+
+                    <p>
+                        Set defaults used when planning your
+                        academic progress.
+                    </p>
+                </div>
+
+
+                <form id="academicSettingsForm">
+
+                    <div class="settings-form-grid">
+
+                        <div class="settings-field">
+
+                            <label for="settingsDefaultYear">
+                                Default Academic Year
+                            </label>
+
+                            <select id="settingsDefaultYear">
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label for="settingsDefaultSemester">
+                                Default Semester
+                            </label>
+
+                            <select id="settingsDefaultSemester">
+                                <option value="1st Semester">
+                                    1st Semester
+                                </option>
+
+                                <option value="2nd Semester">
+                                    2nd Semester
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label for="settingsGraduationCredits">
+                                Graduation Credit Target
+                            </label>
+
+                            <input
+                                type="number"
+                                id="settingsGraduationCredits"
+                                value="130"
+                                min="1"
+                                max="300"
+                            >
+
+                            <small>
+                                KSU SmartPlan currently uses
+                                130 credits as the prototype target.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-form-footer">
+
+                        <span
+                            id="academicSettingsMessage"
+                            class="settings-message"
+                        ></span>
+
+                        <button
+                            type="submit"
+                            class="settings-primary-button"
+                        >
+                            Save Academic Preferences
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <div class="settings-policy-card">
+
+                    <div>
+                        <span>Scholarship Credit Guide</span>
+
+                        <strong id="settingsScholarshipRequirement">
+                            16 credits
+                        </strong>
+                    </div>
+
+                    <p>
+                        1st–3rd year students require 16 semester
+                        credits for the SmartPlan scholarship guide.
+                        4th year students require 12 credits.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 INTERFACE
+            =========================================== -->
+            <section
+                class="settings-section"
+                data-settings-panel="interface"
+                hidden
+            >
+
+                <div class="settings-section-header">
+
+                    <span class="card-eyebrow">
+                        INTERFACE
+                    </span>
+
+                    <h3>Interface Preferences</h3>
+
+                    <p>
+                        Choose how KSU SmartPlan behaves when
+                        you use your account.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-option-list">
+
+                    <label class="settings-option-row">
+
+                        <div>
+                            <strong>Default Landing Page</strong>
+
+                            <span>
+                                Choose the first page you want
+                                to open after signing in.
+                            </span>
+                        </div>
+
+                        <select id="settingsLandingPage">
+                            <option value="dashboard.html">
+                                Dashboard
+                            </option>
+
+                            <option value="courses.html">
+                                Course Finder
+                            </option>
+
+                            <option value="timetable.html">
+                                Timetable
+                            </option>
+
+                            <option value="credit-tracker.html">
+                                Credit Tracker
+                            </option>
+                        </select>
+
+                    </label>
+
+
+                    <label class="settings-option-row">
+
+                        <div>
+                            <strong>Compact Sidebar</strong>
+
+                            <span>
+                                Start SmartPlan with the sidebar
+                                collapsed when supported.
+                            </span>
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="settingsCompactSidebar"
+                            class="settings-switch-input"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <div class="settings-form-footer">
+
+                    <span
+                        id="interfaceSettingsMessage"
+                        class="settings-message"
+                    ></span>
+
+                    <button
+                        type="button"
+                        id="saveInterfaceSettings"
+                        class="settings-primary-button"
+                    >
+                        Save Interface Preferences
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 DATA & STORAGE
+            =========================================== -->
+            <section
+                class="settings-section"
+                data-settings-panel="data"
+                hidden
+            >
+
+                <div class="settings-section-header">
+
+                    <span class="card-eyebrow">
+                        DATA
+                    </span>
+
+                    <h3>Data & Storage</h3>
+
+                    <p>
+                        Review the SmartPlan information saved
+                        for this student account.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-data-grid">
+
+                    <article class="settings-data-card">
+                        <span>Selected Courses</span>
+                        <strong id="settingsSelectedCoursesCount">
+                            0
+                        </strong>
+                    </article>
+
+                    <article class="settings-data-card">
+                        <span>Completed Courses</span>
+                        <strong id="settingsCompletedCoursesCount">
+                            0
+                        </strong>
+                    </article>
+
+                    <article class="settings-data-card">
+                        <span>GPA Subjects</span>
+                        <strong id="settingsGpaSubjectsCount">
+                            0
+                        </strong>
+                    </article>
+
+                    <article class="settings-data-card">
+                        <span>Profile Photo</span>
+                        <strong id="settingsPhotoStatus">
+                            Not saved
+                        </strong>
+                    </article>
+
+                </div>
+
+
+                <div class="settings-storage-note">
+
+                    <strong>Prototype storage</strong>
+
+                    <p>
+                        Your current SmartPlan prototype stores
+                        account data in this browser. Clearing
+                        browser site data will remove locally
+                        stored information.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-danger-zone">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            RESET
+                        </span>
+
+                        <h4>Reset My Planning Data</h4>
+
+                        <p>
+                            Removes this account's selected courses,
+                            timetable selections, completed-course
+                            history and GPA calculator data.
+                            Your registered account and profile
+                            information will remain.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="resetAccountPlanningData"
+                        class="settings-danger-button"
+                    >
+                        Reset Planning Data
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+</main>
+
+</div>
+
+<script src="js/courses-data.js"></script>
+<script src="js/presentation-fix.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/app.js"></script>
+<script src="js/settings.js"></script>
+
+</body>
+</html>
+
+
+
+
+

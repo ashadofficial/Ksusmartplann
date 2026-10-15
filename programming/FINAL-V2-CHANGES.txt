@@ -1,0 +1,8 @@
+KSU SmartPlan Final V2 changes
+- Timetable repeats course name/code in every occupied period cell.
+- Timetable grid is more compact; 08:00 and 12:00 no-class rows are hidden.
+- Student ID format: 1 English letter + 10 digits; IDs normalize to lowercase.
+- Password: minimum 8 chars, uppercase + lowercase + number.
+- Registration stores a Korean mobile number.
+- Forgot Password has mobile verification demo flow. Because this is a static/localStorage prototype, the code is displayed locally; real SMS requires a backend/SMS provider.
+- Department name corrected to Global Korean Studies.

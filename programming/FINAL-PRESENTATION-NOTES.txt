@@ -1,0 +1,16 @@
+KSU SmartPlan - Final Presentation Build
+
+Run: double-click START-KSU-SMARTPLAN.bat
+
+Course academic data: KSU Fall 2026 Global College guidebook.
+Generated demo schedule rules:
+- No generated class at 08:00-08:50 or 12:00-12:50.
+- 3-credit regular: 09:00-11:50, 13:00-15:50, or 16:00-18:50.
+- 2-credit regular: continuous allowed blocks ending by 17:50.
+- 1-credit regular: allowed single periods from 09:00 through 17:50.
+- Online/CELL demo rule: 17:00-19:50.
+- Named professor schedules do not overlap.
+- Exact course offering selection/removal uses offeringId.
+- True duplicated source records are removed at runtime; distinct official section codes remain.
+
+Note: regular course day/time is demo-generated because the guidebook directs students to E-Schedule/Student Portal for live schedule details.

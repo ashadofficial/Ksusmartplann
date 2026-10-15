@@ -1,0 +1,8 @@
+KSU SmartPlan FINAL V4
+- Dashboard now uses the same common sidebar as every other page, including Sign Out.
+- Dashboard mojibake/abnormal arrow characters cleaned.
+- Course Finder category filtering fixed: department selections retain applicable general education/KIIP categories; Engineering Basic only for engineering departments.
+- Global College is not shown as a department option; general-education course data remains available.
+- Existing 2-credit scheduling keeps morning + afternoon distribution with continuous periods and no lunch crossing.
+- Profile hero redesigned in the same KSU blue/campus visual language.
+- Existing timetable, account, GPA, credit, course selection logic preserved.

@@ -1,0 +1,1 @@
+Read SUPABASE-DEPLOY-GUIDE.md first. Replace the placeholders in js/supabase-config.js, then run SUPABASE-SETUP.sql in Supabase SQL Editor before deploying. Never put a service_role key in frontend code.

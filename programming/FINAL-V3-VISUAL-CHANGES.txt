@@ -1,0 +1,8 @@
+KSU SmartPlan FINAL V3 — Visual update
+
+- Existing V2 functionality preserved.
+- Added KSU campus image to the common sidebar with dark blue overlay.
+- Added KSU campus image to the dashboard hero/banner with readable blue overlay.
+- Reduced dashboard content width/padding slightly.
+- Reduced dashboard hero height/padding slightly for a more compact presentation view.
+- No course, timetable, authentication, GPA, credit, or profile logic changed in this V3 visual patch.

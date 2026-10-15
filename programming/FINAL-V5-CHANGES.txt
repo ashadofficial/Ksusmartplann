@@ -1,0 +1,9 @@
+KSU SmartPlan FINAL V5
+- Removed Global College from Course Finder department dropdown permanently while retaining general-education data.
+- Preserved department-aware shared category filtering.
+- Preserved morning/afternoon 2-credit schedule distribution and no-lunch-cross rules.
+- Improved Profile banner contrast and Change Photo visibility.
+- Dashboard/sidebar/profile use a real Kyungsung University campus image URL with local fallback.
+- Get Help now opens a working help page.
+- Forgot Password remains a functional local demo verification flow; real SMS requires backend/provider.
+- Existing working features preserved.
